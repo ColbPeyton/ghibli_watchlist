@@ -12,7 +12,7 @@ function WatchlistBar(props){
         getFilmsFromAPI(props.watchlist);
     }, [])
 
-// Will be used for catalog
+    // Using id, grab title from API to be sued for MovieCard Posters
     function getFilmsFromAPI(urls){
         let requests = urls.map(url => fetch(`https://ghibliapi.herokuapp.com/films/${url}`));
 

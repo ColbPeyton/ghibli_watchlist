@@ -4,7 +4,7 @@ import { ADD_FILM, REMOVE_FILM, CURRENT_FILM, LOGIN, LOGOUT} from "../actions/ac
 const INITIAL_STATE = {
     profile: {
         username: '',
-        watchlist: ["58611129-2dbc-4a81-a72f-77ddfc1b1b49", "12cfb892-aac0-4c5b-94af-521852e46d6a"]
+        watchlist: ["58611129-2dbc-4a81-a72f-77ddfc1b1b49"]
     },
     currentlyViewedItem: {
         name: '',
