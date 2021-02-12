@@ -3,7 +3,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MovieScrollBar from '../components/MovieScrollBar';
 import WatchlistBar from '../components/WatchlistBar';
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+
 
 function Home(props){
     return(
@@ -12,7 +13,7 @@ function Home(props){
                 <Header />
             </Container>
             <Container fluid='md' className='container-body'>
-                <h3>Studio Ghibli Watchlist</h3>
+                <h3>Studio Ghibli Watchlist </h3>
                 <MovieScrollBar />
                 <p>Let's find something to watch</p>
                 <WatchlistBar />

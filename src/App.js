@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './styles/App.scss';
 
 import {
@@ -13,25 +15,27 @@ import Catalog from './pages/Catalog';
 import MovieDetails from './pages/MovieDetails';
 import PersonalWatchlist from './pages/PersonalWatchlist';
 
-function App() {
-  return (
+class App extends React.Component {
+  render(){
+    return(
     <Router>
         <Switch>
         <Route path='/catalog'>
-          <Catalog />
+            <Catalog />
         </Route>
         <Route path='/watchlist'>
-          <PersonalWatchlist />
+            <PersonalWatchlist />
         </Route>
         <Route path='/details'>
-          <MovieDetails />
+            <MovieDetails />
         </Route>
         <Route exact path='/'>
-          <Home />
+            <Home />
         </Route>
-      </Switch>
-    </Router>
-  );
+        </Switch>
+    </Router>      
+    );
+  } 
 }
 
 export default App;
