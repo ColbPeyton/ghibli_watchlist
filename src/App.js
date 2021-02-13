@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { connect } from 'react-redux'
-
-
 import './styles/App.scss';
 
 import {
@@ -25,7 +22,7 @@ class App extends React.Component {
     return(
     <Router className="App">
         <Switch>
-        <Route exact path={`/details/:${this.props.currentFilm.id}`}>
+        <Route path={`/details`}>
           <MovieDetails /> 
         </Route>
         <Route path='/catalog'>
@@ -43,9 +40,5 @@ class App extends React.Component {
   } 
 }
 
-const mapStateToProps = state => {
-  return {currentFilm: state.currentlyViewedFilm}
-}
 
-
-export default connect(mapStateToProps)(App);
+export default App;
