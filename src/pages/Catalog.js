@@ -1,8 +1,5 @@
 import React, {useState, useEffect} from 'react';
 
-
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import MovieCard from '../components/MovieCard';
 
 import '../styles/pages/Catalog.scss';
@@ -36,12 +33,10 @@ function Catalog(props){
 
     return(
         <Container fluid className='catalog'>
-        <Header />
             <h1>All Movies</h1>
             <Container className="container-grid">
                 {renderFilms()}
             </Container>
-        <Footer />
         </Container>
     )
 }

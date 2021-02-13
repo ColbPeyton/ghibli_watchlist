@@ -15,12 +15,17 @@ import MovieDetails from './pages/MovieDetails';
 import PersonalWatchlist from './pages/PersonalWatchlist';
 
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 
 
 class App extends React.Component {
   render(){
     return(
     <Router className="App">
+        <Header />
+
         <Switch>
         <Route path={`/details`}>
           <MovieDetails /> 
@@ -35,6 +40,7 @@ class App extends React.Component {
             <Home />
         </Route>
         </Switch>
+      <Footer />
     </Router>      
     );
   } 
