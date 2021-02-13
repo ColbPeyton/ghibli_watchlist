@@ -1,10 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+
 
 function MovieDetails(props){
+    console.log(props)
     return(
-        <p>MovieDetails</p>
+        <div>
+        <p>{props.currentFilm.title}</p>
+        <p>heere</p>
+        </div>
 
     )
 }
 
-export default MovieDetails;
+const mapStateToProps = state => {
+    return {currentFilm: state.currentlyViewedFilm}
+}
+
+export default connect(mapStateToProps)(MovieDetails);

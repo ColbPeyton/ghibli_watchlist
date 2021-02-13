@@ -21,11 +21,12 @@ export const removeItemFromWatchlist = (id) =>{
 }
 
 
-export const currentItem = (id) => {
+export const currentFilm = (id, title) => {
     return{
         type: CURRENT_FILM,
         payload:{
-            id
+            id, 
+            title
         }
     }
 }

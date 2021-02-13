@@ -6,8 +6,8 @@ const INITIAL_STATE = {
         username: '',
         watchlist: ["58611129-2dbc-4a81-a72f-77ddfc1b1b49"]
     },
-    currentlyViewedItem: {
-        name: '',
+    currentlyViewedFilm: {
+        title: '',
         id: 0
     }
 }
@@ -47,6 +47,7 @@ const updateCurrentFilm = (state= INITIAL_STATE, action) =>{
     return {...state, currentlyViewedFilm: 
         {
             id: action.payload.id, 
+            title: action.payload.title
         }
     }
 }

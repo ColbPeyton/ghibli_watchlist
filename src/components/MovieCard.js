@@ -1,4 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import { connect } from 'react-redux';
+import { withRouter} from 'react-router-dom';
+
+import {currentFilm} from '../redux/actions/actions';
+
 
 // import {posterKey} from '../_data/keys';
 
@@ -25,11 +30,17 @@ function MovieCard(props){
 
     }
 
+    // Onclick, update store and direct to MovieDetails page
+    function updateCurrentFilmAndLoadDetails(id, title){
+        props.currentFilm(id, title);
+        props.history.push(`/details/${title}`);
+    }
+
 
 
     return(
         <div className='card-container'>
-            <button className='card-image' 
+            <button className='card-image' onClick={()=> updateCurrentFilmAndLoadDetails(props.id, props.title)}
                 style={
                     {
                         backgroundImage: poster,
@@ -43,4 +54,9 @@ function MovieCard(props){
     )
 }
 
-export default MovieCard
+export default connect(
+    null,
+    {
+        currentFilm
+    }
+)(withRouter(MovieCard))
