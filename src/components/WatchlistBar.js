@@ -27,10 +27,7 @@ function WatchlistBar(props){
         })
         .catch(e => console.log(e));
 
-        // let requests = await fetch('https://ghibliapi.herokuapp.com/films');
-        // const data  = await requests.json();
 
-        // console.log(data);
 
     }
 

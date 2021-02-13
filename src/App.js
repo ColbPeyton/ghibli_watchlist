@@ -18,7 +18,7 @@ import PersonalWatchlist from './pages/PersonalWatchlist';
 class App extends React.Component {
   render(){
     return(
-    <Router>
+    <Router className="App">
         <Switch>
         <Route path='/catalog'>
             <Catalog />

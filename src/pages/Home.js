@@ -8,19 +8,15 @@ import { Container } from 'react-bootstrap';
 
 function Home(props){
     return(
-        <Container className='home'>
-            <Container fluid className='container-header'>
-                <Header />
-            </Container>
+        <Container fluid className='home'>
+            <Header />
             <Container fluid='md' className='container-body'>
-                <h3>Studio Ghibli Watchlist </h3>
+                <h1>Studio Ghibli Watchlist </h1>
                 <MovieScrollBar />
                 <p>Let's find something to watch</p>
                 <WatchlistBar />
             </Container>
-            <Container fluid className='container-footer'>
-                <Footer />
-            </Container>
+            <Footer />
         </Container>
 
     )
