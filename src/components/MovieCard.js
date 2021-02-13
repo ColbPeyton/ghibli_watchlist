@@ -4,9 +4,11 @@ import React, {useState, useEffect} from 'react';
 
 import image from '../assets/images/temp.png';
 
+import '../styles/components/MovieCard.scss'
+
 function MovieCard(props){
 
-    const [poster, setPoster] = useState('http://placekitten.com/g/200/300');
+    const [poster, setPoster] = useState(image);
 
     useEffect(()=>{
         // getPoster(props.film);
@@ -23,10 +25,20 @@ function MovieCard(props){
 
     }
 
+
+
     return(
-        <div>
-            <img src={poster}  alt={props.film}/>
-            <p>{props.film}</p>
+        <div className='card-container'>
+            <button className='card-image' 
+                style={
+                    {
+                        backgroundImage: poster,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center center'
+                    }
+                }>  
+            </button>
+            <p>{props.title}</p>
         </div>
     )
 }

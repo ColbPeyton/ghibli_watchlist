@@ -5,8 +5,11 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MovieCard from '../components/MovieCard';
 
+import '../styles/pages/Catalog.scss';
+
 import {
-    Container
+    Col,
+    Container, Row
 } from 'react-bootstrap';
 
 function Catalog(props){
@@ -21,7 +24,7 @@ function Catalog(props){
     async function getFilms(){
         const requests = await fetch('https://ghibliapi.herokuapp.com/films');
         const data  = await requests.json();
-        setFilms([data]);
+        setFilms(data);
     }
 
     function renderFilms(){
@@ -32,10 +35,10 @@ function Catalog(props){
 
 
     return(
-        <Container fluid>
+        <Container fluid className='catalog'>
         <Header />
             <h1>All Movies</h1>
-            <Container>
+            <Container className="container-grid">
                 {renderFilms()}
             </Container>
         <Footer />
