@@ -6,14 +6,14 @@ import MovieCard from './MovieCard';
 
 
 function WatchlistBar(props){
-    const [films, setFilms] = useState([]);
+    const [films, setFilms] = useState([...props.watchlist]);
 
     useEffect(()=>{
         getFilmsFromAPI(props.watchlist);
     }, [])
 
     // Using id, grab title from API to be sued for MovieCard Posters
-    function getFilmsFromAPI(urls){
+    async function getFilmsFromAPI(urls){
         let requests = urls.map(url => fetch(`https://ghibliapi.herokuapp.com/films/${url}`));
 
         Promise.all(requests)
@@ -26,6 +26,11 @@ function WatchlistBar(props){
             setFilms(data);
         })
         .catch(e => console.log(e));
+
+        // let requests = await fetch('https://ghibliapi.herokuapp.com/films');
+        // const data  = await requests.json();
+
+        // console.log(data);
 
     }
 
