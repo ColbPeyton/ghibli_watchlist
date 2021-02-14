@@ -1,4 +1,4 @@
-import { ADD_FILM, REMOVE_FILM, CURRENT_FILM} from "../actions/actionTypes";
+import { ADD_FILM, REMOVE_FILM, CURRENT_FILM, LOGIN, LOGOUT} from "../actions/actionTypes";
 
 
 const INITIAL_STATE = {
@@ -23,6 +23,10 @@ export const reducers = (state = INITIAL_STATE, action) =>{
             return removeFilmFromWatchlist(state, action);
         case CURRENT_FILM:
             return updateCurrentFilm(state, action);
+        case LOGIN:
+            return userLogin(state, action);
+        case LOGOUT:
+            return userLogin(state, action);
         default:
             return state;
     }
@@ -55,4 +59,15 @@ const updateCurrentFilm = (state= INITIAL_STATE, action) =>{
             title: action.payload.title
         }
     }
+}
+
+const userLogin = (state = INITIAL_STATE, action) => {
+    return {...state, profile:{
+        username: action.payload.username
+    }}
+}
+const userLogout = (state = INITIAL_STATE, action) => {
+    return {...state, profile:{
+        username: ''
+    }}
 }

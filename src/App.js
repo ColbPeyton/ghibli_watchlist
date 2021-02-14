@@ -13,6 +13,8 @@ import Home from './pages/Home';
 import Catalog from './pages/Catalog';
 import MovieDetails from './pages/MovieDetails';
 import PersonalWatchlist from './pages/PersonalWatchlist';
+import SignIn from './pages/SignIn';
+import SignOut from './pages/SignOut';
 
 
 import Header from './components/Header';
@@ -35,6 +37,12 @@ class App extends React.Component {
         </Route>
         <Route path='/watchlist'>
             <PersonalWatchlist />
+        </Route>
+        <Route path='/login'>
+            <SignIn />
+        </Route>
+        <Route path='/logout'>
+            <SignOut />
         </Route>
         <Route exact path='/'>
             <Home />

@@ -6,7 +6,7 @@ import '../styles/pages/Catalog.scss';
 
 import {
     Col,
-    Container, Row
+    Container, Row, Jumbotron
 } from 'react-bootstrap';
 
 function Catalog(props){
@@ -50,7 +50,12 @@ function Catalog(props){
 
     return(
         <Container fluid className='catalog'>
-            <h1>All Movies</h1>
+             <Jumbotron fluid>
+                <Container>
+                    <h1>All Films</h1>
+                    <p>Let's Get You Watching Something</p>
+                </Container>
+            </Jumbotron>
             <Container className="container-grid">
                 {renderDataIfAvailable()}
             </Container>
