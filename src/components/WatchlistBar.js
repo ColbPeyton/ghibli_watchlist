@@ -6,10 +6,10 @@ import MovieCard from './MovieCard';
 
 
 function WatchlistBar(props){
-    const [films, setFilms] = useState([...props.watchlist]);
+    const [films, setFilms] = useState([]);
 
     useEffect(()=>{
-        getFilmsFromAPI(props.watchlist);
+            getFilmsFromAPI(props.watchlist);
     }, [])
 
     // Using id, grab title from API to be sued for MovieCard Posters

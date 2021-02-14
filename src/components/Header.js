@@ -12,11 +12,9 @@ import '../styles/components/Header.scss';
 
 function Header(props){
 
-    const [username, setUsername] = useState(props.username)
-
-    function renderUsernameIfLoggedin(){
+    function renderLoginStatus(){
         if(props.username !== ''){
-            return <NavLink to="/logout" activeClassName='selected'>{username}</NavLink>
+            return <NavLink to="/logout" activeClassName='selected'>Logout</NavLink>
         }
 
         return <NavLink to="/login" activeClassName='selected'>Login</NavLink>
@@ -31,7 +29,7 @@ function Header(props){
                 <NavLink exact to="/" activeClassName='selected'>Home</NavLink>
                 <NavLink to="/catalog" activeClassName='selected'>Catalog</NavLink>
                 <NavLink to="/watchlist" activeClassName='selected'>Watchlist</NavLink>
-                {renderUsernameIfLoggedin()}
+                {renderLoginStatus()}
             </nav>
         </header>
     )

@@ -10,7 +10,6 @@ const INITIAL_STATE = {
         title: '',
         id: 0
     },
-    watchlist: []
 }
 
 
@@ -26,7 +25,7 @@ export const reducers = (state = INITIAL_STATE, action) =>{
         case LOGIN:
             return userLogin(state, action);
         case LOGOUT:
-            return userLogin(state, action);
+            return userLogout(state, action);
         default:
             return state;
     }
@@ -63,11 +62,13 @@ const updateCurrentFilm = (state= INITIAL_STATE, action) =>{
 
 const userLogin = (state = INITIAL_STATE, action) => {
     return {...state, profile:{
-        username: action.payload.username
+        username: action.payload.username,
+        watchlist: state.profile.watchlist
     }}
 }
 const userLogout = (state = INITIAL_STATE, action) => {
     return {...state, profile:{
-        username: ''
+        username: '',
+        watchlist: state.profile.watchlist
     }}
 }

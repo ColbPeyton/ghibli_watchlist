@@ -42,7 +42,7 @@ export const signIn = (username) => {
 
 export const signOut = (username) => {
     return{
-        type: LOGIN,
+        type: LOGOUT,
         payload:{
             username
         }
