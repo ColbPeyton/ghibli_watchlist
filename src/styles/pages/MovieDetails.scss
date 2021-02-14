@@ -1,10 +1,18 @@
 .details{
+    margin-top: 0.5rem;
     .container-details{
         .top{
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            margin-bottom: 0.5rem;
+        }
+
+        .bot{
+            .description{
+                margin-bottom: 10px;
+            }
         }
     }
 }

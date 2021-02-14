@@ -1,15 +1,16 @@
-import { ADD_FILM, REMOVE_FILM, CURRENT_FILM, LOGIN, LOGOUT} from "../actions/actionTypes";
+import { ADD_FILM, REMOVE_FILM, CURRENT_FILM} from "../actions/actionTypes";
 
 
 const INITIAL_STATE = {
     profile: {
         username: '',
-        watchlist: ["58611129-2dbc-4a81-a72f-77ddfc1b1b49"]
+        watchlist: []
     },
     currentlyViewedFilm: {
         title: '',
         id: 0
-    }
+    },
+    watchlist: ['hello']
 }
 
 
@@ -22,10 +23,6 @@ export const reducers = (state = INITIAL_STATE, action) =>{
             return removeFilmFromWatchlist(state, action);
         case CURRENT_FILM:
             return updateCurrentFilm(state, action);
-        // case LOGIN:
-        //     return removeItemQuanityFromCart(state, action);
-        // case LOGOUT:
-        //     return updateCurrentItem(state, action);
         default:
             return state;
     }
@@ -33,14 +30,25 @@ export const reducers = (state = INITIAL_STATE, action) =>{
 
 
 const addFilmToWatchlist = (state = INITIAL_STATE, action) =>{
-    if(action.type === ADD_FILM){
-        return {...state, cart:[...state.cart, action.payload]};
-    }
-    return state;
+    return {...state, watchlist: [...state.watchlist, action.payload.id]
+    };
+    // return {...state, profile: 
+    //     {
+    //         username: state.profile.username,
+    //         watchlist: [...state.profile.watchlist, action.payload.id]
+    //     }
+    // };
 }
 
 const removeFilmFromWatchlist = (state = INITIAL_STATE, action) =>{
-    return {...state, cart: [...state.cart.filter(item => item.id !== action.payload.id)]};
+    return {...state,  watchlist: [...state.watchlist.filter(film => film !== action.payload.id)]
+    };
+    // return {...state, profile: 
+    //     { 
+    //         username: state.profile.username,
+    //         watchlist: [state.profile.watchlist.filter(film => film !== action.payload.id)]
+    //     }
+    // };
 }
 
 const updateCurrentFilm = (state= INITIAL_STATE, action) =>{

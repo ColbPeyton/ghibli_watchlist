@@ -1,4 +1,4 @@
-export const ADD_FILM = 'ADD_FILM_TO_CART';
+export const ADD_FILM = 'ADD_FILM_TO_WATCHLIST';
 export const REMOVE_FILM = 'REMOVE_FILM_FROM_WATCHLIST';
 export const CURRENT_FILM = 'CURRENT_SELECTED_FILM';
 export const LOGIN = 'USER_LOGIN';

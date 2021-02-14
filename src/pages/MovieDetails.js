@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { currentFilm } from '../redux/actions/actions';
 
 import Poster from '../components/Poster';
+import AddToWatchlist from '../components/AddToWatchlist';
 
 import {
     Col,
@@ -61,6 +62,23 @@ function MovieDetails(props){
 
     }
 
+    function renderDescription(){
+        return(
+            <Accordion>
+                <Card>
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                        Description
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body>{details.description}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+        )
+    }
+
 
     return(
         <Container fluid className='details'>
@@ -69,12 +87,17 @@ function MovieDetails(props){
                     <div className='poster'>
                         <Poster title={details.title} />
                     </div>
-                    <div className='description'>
-                        {details.description}
-                    </div>
+                </div>
+                <div className='mid'>
+                    <AddToWatchlist id={details.id} />
                 </div>
                 <div className='bot'>
-                    {renderFilmInfo()}
+                    <div className='description sep'>
+                        {renderDescription()}
+                    </div>
+                    <div className='info sep'>
+                        {renderFilmInfo()}
+                    </div>
                 </div>
             </Container>
         </Container>

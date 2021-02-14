@@ -1,7 +1,7 @@
-import { ADD_FILM, REMOVE_FILM, CURRENT_FILM, LOGIN, LOGOUT} from "./actionTypes";
+import { ADD_FILM, REMOVE_FILM, CURRENT_FILM} from "./actionTypes";
 
 
-export const addItemToWatchlist = (id) =>{
+export const addFilmToWatchlist = (id) =>{
     return{
         type: ADD_FILM,
         payload:{
@@ -11,7 +11,7 @@ export const addItemToWatchlist = (id) =>{
 };
 
 
-export const removeItemFromWatchlist = (id) =>{
+export const removeFilmFromWatchlist = (id) =>{
     return{
         type: REMOVE_FILM,
         payload:{
@@ -27,15 +27,6 @@ export const currentFilm = (id, title) => {
         payload:{
             id, 
             title
-        }
-    }
-}
-
-export const login = (user) => {
-    return{
-        type: LOGIN,
-        payload:{
-            user
         }
     }
 }
