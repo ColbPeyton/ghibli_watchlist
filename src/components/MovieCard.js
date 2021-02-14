@@ -10,6 +10,7 @@ import {currentFilm} from '../redux/actions/actions';
 import image from '../assets/images/temp.png';
 
 import '../styles/components/MovieCard.scss'
+import { Spinner } from 'react-bootstrap';
 
 function MovieCard(props){
 
@@ -36,6 +37,12 @@ function MovieCard(props){
         props.history.push(`/details/${title}`);
     }
 
+    function renderTextOrSpinner(){
+        if(props.title){
+            return <p className='middle'>{props.title}</p>
+        }
+        return <Spinner animation="border" variant="primary" className='spinner'/>
+    }
 
 
     return(
@@ -43,13 +50,13 @@ function MovieCard(props){
             <button className='card-image' onClick={()=> updateCurrentFilmAndLoadDetails(props.id, props.title)}
                 style={
                     {
-                        backgroundImage: poster,
+                        backgroundColor: 'black',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center center'
                     }
                 }>  
             </button>
-            <p>{props.title}</p>
+            {renderTextOrSpinner()}
         </div>
     )
 }

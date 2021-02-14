@@ -7,17 +7,21 @@ import MovieCard from '../components/MovieCard';
 
 import {
     Col,
-    Container, Row
+    Container, Jumbotron, Row, Spinner
 } from 'react-bootstrap';
 
 
 function PersonalWatchlist(props){
 
     const [films, setFilms] = useState([]);
+    const [spinner, setSpinner] = useState(true);
 
     
     useEffect(()=>{
         getFilmsFromAPI(props.watchlist);
+        setTimeout(()=>{
+            setSpinner(false);
+        }, 1000)
     }, [])
 
     // Using id, grab title from API to be sued for MovieCard Posters
@@ -58,12 +62,39 @@ function PersonalWatchlist(props){
         return cards;
     }
 
-    return(
-        <Container fluid className='catalog'>
-            <h1>Your Watchlist</h1>
+    function renderMessageBasedOnFilms(){
+        if(!films.length){
+            return(
+                <Container className="container">
+                    <h4>Nothing here :(</h4>
+                </Container>
+            )
+        }
+        return(
             <Container className="container-grid">
                 {films}
             </Container>
+        )
+    }
+
+    function renderSpinner(){
+        return(
+            <Container fluid className='spinner'>
+                <Spinner animation="border" variant="primary" className='spinner'/>
+            </Container>
+        ) 
+    }
+
+    return(
+        <Container fluid className='catalog'>
+            <Jumbotron fluid>
+                <Container>
+                    <h1>Your Watchlist</h1>
+                    <p>Let's Get You Watching Something</p>
+                </Container>
+                
+            </Jumbotron>
+            {spinner ? renderSpinner() : renderMessageBasedOnFilms()}
         </Container>
 
     )

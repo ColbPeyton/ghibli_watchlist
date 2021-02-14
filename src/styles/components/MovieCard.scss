@@ -5,7 +5,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 
     .card-image{
         width: 100%;
@@ -16,12 +15,26 @@
         align-self: center;
     }
 
-    p{
+    .middle{
+        width: 95%;
+        padding-left: 5px;
+        position: absolute;
+        z-index: 5;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        text-align: left;
+        pointer-events: none;
+    }
+
+    .spinner{
         position: absolute;
         z-index: 5;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.5rem;
     }
 }
