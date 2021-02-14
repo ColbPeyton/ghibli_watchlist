@@ -10,7 +10,7 @@ const INITIAL_STATE = {
         title: '',
         id: 0
     },
-    watchlist: ['hello']
+    watchlist: []
 }
 
 
@@ -30,25 +30,22 @@ export const reducers = (state = INITIAL_STATE, action) =>{
 
 
 const addFilmToWatchlist = (state = INITIAL_STATE, action) =>{
-    return {...state, watchlist: [...state.watchlist, action.payload.id]
+    return {...state, profile: 
+        {
+            username: state.profile.username,
+            watchlist: [...state.profile.watchlist, action.payload.id]
+        }
     };
-    // return {...state, profile: 
-    //     {
-    //         username: state.profile.username,
-    //         watchlist: [...state.profile.watchlist, action.payload.id]
-    //     }
-    // };
 }
 
 const removeFilmFromWatchlist = (state = INITIAL_STATE, action) =>{
-    return {...state,  watchlist: [...state.watchlist.filter(film => film !== action.payload.id)]
+
+    return {...state, profile: 
+        { 
+            username: state.profile.username,
+            watchlist: [...state.profile.watchlist.filter(film => film !== action.payload.id)]
+        }
     };
-    // return {...state, profile: 
-    //     { 
-    //         username: state.profile.username,
-    //         watchlist: [state.profile.watchlist.filter(film => film !== action.payload.id)]
-    //     }
-    // };
 }
 
 const updateCurrentFilm = (state= INITIAL_STATE, action) =>{

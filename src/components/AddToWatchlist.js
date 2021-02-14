@@ -7,14 +7,13 @@ import {addFilmToWatchlist, removeFilmFromWatchlist} from '../redux/actions/acti
 
 function AddToWatchlist(props){
 
+    // Keep track of watchlist in local state, imports from store
     const [currentWatchlist, setCurrentWatchlist] = useState(props.watchlist)
-    const [onWatchlist, setOnWatchlist] = useState(props.watchlist.includes(props.id))
-
+    // Check for conditional rendering of button and actions, will be updated with bool to reduce .includes calls
+    const [onWatchlist, setOnWatchlist] = useState(currentWatchlist.includes(props.currentFilm.id))
 
     useEffect(()=>{
-        console.log('updated')
         setCurrentWatchlist(props.watchlist)
-        setOnWatchlist(currentWatchlist.includes(props.id))
     },[props.watchlist])
 
     function determineIfOnWatchlist(){
@@ -27,24 +26,23 @@ function AddToWatchlist(props){
 
     function addOrRemoveFromWatchlist(){
         if(onWatchlist){
-            removeFilmFromWatchlist(props.id)
-            console.log('off ', currentWatchlist)
+            props.removeFilmFromWatchlist(props.id)
+            setOnWatchlist(false)
         }else{
-            addFilmToWatchlist(props.id)
-            console.log('on ', currentWatchlist)
-
+            props.addFilmToWatchlist(props.id)
+            setOnWatchlist(true)
         }
     }
 
     return(
-        <div className='btn'>
+        <div className='btn-container'>
             {determineIfOnWatchlist()}
         </div>
     )
 }
 
 const mapStateToProps = state => {
-    return {watchlist: state.watchlist}
+    return {watchlist: state.profile.watchlist, currentFilm: state.currentlyViewedFilm}
 }
 
 export default connect(
