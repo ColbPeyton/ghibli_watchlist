@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 
 import {addFilmToWatchlist, removeFilmFromWatchlist} from '../redux/actions/actions';
 
+
+import '../styles/components/AddToWatchlist.scss';
 
 function AddToWatchlist(props){
 
@@ -18,10 +21,22 @@ function AddToWatchlist(props){
 
     function determineIfOnWatchlist(){
         if(onWatchlist){
-            return <button onClick={()=> addOrRemoveFromWatchlist()}>Remove from Watchlist</button>
+            return <Button 
+                    variant="danger" 
+                    size="lg" 
+                    block 
+                    onClick={()=> addOrRemoveFromWatchlist()}>
+                    Remove From Watchlist
+                </Button>
         }
 
-        return <button onClick={()=> addOrRemoveFromWatchlist()}>Add To Watchlist</button>
+        return <Button 
+                variant="success" 
+                size="lg" 
+                block 
+                onClick={()=> addOrRemoveFromWatchlist()}>
+                Add To Watchlist
+            </Button>
     }
 
     function addOrRemoveFromWatchlist(){

@@ -23,7 +23,7 @@ function Catalog(props){
         const data  = await requests.json();
         setFilms(data);
     }
-
+    
     function renderFilms(){
         return films.map((film, index)=> {
             return <MovieCard title={film.title} id={film.id} key={index}/>
