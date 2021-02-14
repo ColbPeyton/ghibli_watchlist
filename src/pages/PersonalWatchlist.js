@@ -16,7 +16,7 @@ function PersonalWatchlist(props){
     const [films, setFilms] = useState([]);
     const [spinner, setSpinner] = useState(true);
 
-    
+    // Delay if for API call or render empty message/films
     useEffect(()=>{
         getFilmsFromAPI(props.watchlist);
         setTimeout(()=>{
@@ -51,6 +51,8 @@ function PersonalWatchlist(props){
         return combined;
     }
 
+    // Use key/value pairs from combineData to render MovieCard. 
+    // Needed to combine ID and Name for Redux action on MovieCard.
     function generateMovieCards(films){
         const cards = [];
         let index = 0;
@@ -62,6 +64,7 @@ function PersonalWatchlist(props){
         return cards;
     }
 
+    // Render films 
     function renderMessageBasedOnFilms(){
         if(!films.length){
             return(
@@ -77,10 +80,22 @@ function PersonalWatchlist(props){
         )
     }
 
+    // Render spinner while waiting for data from API
     function renderSpinner(){
         return(
-            <Container fluid className='spinner'>
-                <Spinner animation="border" variant="primary" className='spinner'/>
+            <Container className='spinner'>
+                <Row>
+                    <Col>
+                        <Spinner animation="grow" variant="primary" />
+                    </Col>
+                    <Col>
+                        <Spinner animation="grow" variant="warning" />
+                    </Col>
+                    <Col>
+                        <Spinner animation="grow" variant="primary" />
+                    </Col>
+                </Row>
+
             </Container>
         ) 
     }
