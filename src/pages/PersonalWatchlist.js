@@ -4,6 +4,10 @@ import {connect} from 'react-redux';
 
 import MovieCard from '../components/MovieCard';
 
+import '../styles/pages/Catalog.scss';
+import '../styles/pages/PersonalWatchlist.scss';
+
+
 
 import {
     Col,

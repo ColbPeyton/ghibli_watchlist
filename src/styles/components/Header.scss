@@ -1,23 +1,37 @@
 @import '../colors';
 
-.selected{
-    color: red;
-    font-weight: bold;
+
+.link{
+    color: #fff;
+    font-size: 1.25rem;
+    &:hover{
+        text-decoration: none;
+        color: $action-lite;;
+        transition: all 250ms;
+    }
 }
+
+.selected{
+    color: $action-lite;
+    font-weight: 600;
+
+}
+
 
 
 .header{
     position: sticky;
-    background-color: $header;
+    background-color: $action;
     width: 100%;
-    height: 20vh;
-    max-height: 100px;
+    height: 30vh;
+    max-height: 125px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
     .container-logo{
         height: 50%;
-        width: 25%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -28,11 +42,30 @@
         }
     }
     .container-links{
-        width: 60%;
+        width: 100%;
         min-width: 200px;
         height: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
+    }
+}
+
+@media (min-width: 500px){
+    .link{
+        font-size: 1.25rem;
+    }
+    .header{
+        height: 20vh;
+        max-height: 100px;
+        justify-content: space-around;
+        flex-direction: row;
+        .container-logo{
+            height: 50%;
+            width: 25%;
+        }
+        .container-links{
+            max-width: 500px;
+        }
     }
 }

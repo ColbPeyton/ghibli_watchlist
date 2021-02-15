@@ -14,10 +14,10 @@ function Header(props){
 
     function renderLoginStatus(){
         if(props.username !== ''){
-            return <NavLink to="/logout" activeClassName='selected'>Logout</NavLink>
+            return <NavLink to="/logout" activeClassName='selected' className='link'>Logout</NavLink>
         }
 
-        return <NavLink to="/login" activeClassName='selected'>Login</NavLink>
+        return <NavLink to="/login" activeClassName='selected' className='link'>Login</NavLink>
     }
 
     return(
@@ -26,9 +26,9 @@ function Header(props){
                 <img src={Logo} />
             </div>
             <nav className='container-links'>
-                <NavLink exact to="/" activeClassName='selected'>Home</NavLink>
-                <NavLink to="/catalog" activeClassName='selected'>Catalog</NavLink>
-                <NavLink to="/watchlist" activeClassName='selected'>Watchlist</NavLink>
+                <NavLink exact to="/" activeClassName='selected' className='link'>Home</NavLink>
+                <NavLink to="/catalog" activeClassName='selected' className='link'>Catalog</NavLink>
+                <NavLink to="/watchlist" activeClassName='selected' className='link'>Watchlist</NavLink>
                 {renderLoginStatus()}
             </nav>
         </header>
