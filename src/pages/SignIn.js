@@ -20,14 +20,15 @@ function SignIn(props){
     }
 
     return(
-        <Container className='sign-in'>
-            <Jumbotron className='jumbo'>
+        <Container fluid className='sign-in'>
+            <Jumbotron fluid className='jumbo'>
                 <Container>
-                    <h1>SignIn</h1>
+                    <h1>Sign In</h1>
                     <p>To Get Started</p>
                 </Container>    
             </Jumbotron>
-            <form onSubmit={(e)=> handleSubmit(e)} className='container-form'>
+            <Container className='container-form'>
+            <form onSubmit={(e)=> handleSubmit(e)} className='form-body'>
                 <div className='form-group'>
                     <label htmlFor='username'>Username</label>
                     <input 
@@ -50,6 +51,7 @@ function SignIn(props){
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
+            </Container>
         </Container>
        
     )

@@ -27,7 +27,7 @@ function Catalog(props){
 
     function renderFilms(){
         return films.map((film, index)=> {
-            return (<div className='container-card'><MovieCard title={film.title} id={film.id} key={index}/></div>)
+            return (<div className='container-card' key={index}><MovieCard title={film.title} id={film.id} /></div>)
         })
     }
 

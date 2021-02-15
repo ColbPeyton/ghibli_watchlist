@@ -12,5 +12,10 @@
 
     .container-form{
         max-width: 500px;
+        .form-body{
+            display: flex;
+            flex-direction: column;
+        }
+
     }
 }

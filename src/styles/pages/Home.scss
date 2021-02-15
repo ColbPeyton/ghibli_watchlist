@@ -1,19 +1,11 @@
 .home{
     margin-top: 2rem;
     min-height: 75vh;
-    .container-body{
-        height: 100%;
-        width: 100%;
+    .container-jumbo{
         display: flex;
         justify-content: center;
         align-items: center;
-        
-        .container-jumbo{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-        }
+        flex-direction: column;
+        text-align: center;
     }
 }
