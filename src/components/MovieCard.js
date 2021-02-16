@@ -49,7 +49,6 @@ function MovieCard(props){
             <button className='card-image' onClick={()=> updateCurrentFilmAndLoadDetails(props.id, props.title)}
                 style={
                     {
-                        backgroundColor: 'black',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center center'
                     }

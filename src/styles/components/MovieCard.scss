@@ -1,3 +1,5 @@
+@import '../colors';
+
 .card-container{
     position: relative;
     height: 200px;
@@ -13,17 +15,23 @@
         cursor: pointer;
         justify-self: center;
         align-self: center;
+        background-color: black;
+        transition: all 250ms;
+        &:hover{
+            background-color: $footer;
+        }
+        }
     }
 
     .middle{
-        width: 95%;
-        padding-left: 5px;
+        width: 90%;
+        padding-left: 1px;
         position: absolute;
         z-index: 5;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 700;
         color: #fff;
         text-align: left;
@@ -37,4 +45,5 @@
         justify-content: center;
         align-items: center;
     }
-}
+
+ 
