@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import { NavLink } from 'react-router-dom';
 
 import {connect} from 'react-redux';
 
-import Logo from '../assets/images/temp.png';
+import Logo from '../assets/images/ghibli_watchlist_logo-01.png';
 
 
 import '../styles/components/Header.scss';

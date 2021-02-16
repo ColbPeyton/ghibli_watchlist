@@ -7,14 +7,13 @@ import {currentFilm} from '../redux/actions/actions';
 
 // import {posterKey} from '../_data/keys';
 
-import image from '../assets/images/temp.png';
 
 import '../styles/components/MovieCard.scss'
 import { Spinner } from 'react-bootstrap';
 
 function MovieCard(props){
 
-    const [poster, setPoster] = useState(image);
+    const [poster, setPoster] = useState('');
 
     useEffect(()=>{
         // getPoster(props.film);
