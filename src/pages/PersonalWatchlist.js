@@ -88,7 +88,7 @@ function PersonalWatchlist(props){
     function renderSpinner(){
         return(
             <Container className='spinner'>
-                <Row>
+                <Row className='container'>
                     <Col>
                         <Spinner animation="grow" variant="primary" />
                     </Col>

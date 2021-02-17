@@ -4,10 +4,7 @@ import MovieCard from '../components/MovieCard';
 
 import '../styles/pages/Catalog.scss';
 
-import {
-    Col,
-    Container, Row, Jumbotron
-} from 'react-bootstrap';
+import {Container, Jumbotron} from 'react-bootstrap';
 
 function Catalog(props){
     

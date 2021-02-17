@@ -1,8 +1,5 @@
 import React from 'react';
 import { withRouter} from 'react-router-dom';
-
-import MovieScrollBar from '../components/MovieScrollBar';
-import WatchlistBar from '../components/WatchlistBar';
 import { Container, Jumbotron, Button } from 'react-bootstrap';
 
 

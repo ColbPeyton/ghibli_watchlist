@@ -1,34 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter} from 'react-router-dom';
-
+import { Spinner } from 'react-bootstrap';
 import {currentFilm} from '../redux/actions/actions';
 
-
-// import {posterKey} from '../_data/keys';
-
-
 import '../styles/components/MovieCard.scss'
-import { Spinner } from 'react-bootstrap';
+
 
 function MovieCard(props){
-
-    const [poster, setPoster] = useState('');
-
-    useEffect(()=>{
-        // getPoster(props.film);
-    }, [])
-
-    // issue with API, will search for other solution
-    async function getPoster(title){
-        // let fixedTitle = title.replace(/ /g,"+");
-        // const request = await fetch(`http://img.omdbapi.com/?apikey=${posterKey}&t=${fixedTitle}`);
-        // const res = await request.json();
-        // console.log(res)
-        // setPoster(res);
-
-
-    }
 
     // Onclick, update store and direct to MovieDetails page
     function updateCurrentFilmAndLoadDetails(id, title){

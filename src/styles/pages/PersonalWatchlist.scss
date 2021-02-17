@@ -1,3 +1,7 @@
 .spinner{
-   max-width: 250px;
+   position: relative;
+   .container{
+      max-width: 250px;
+   }
+
 }
